@@ -888,6 +888,29 @@ Passing cookies to youtube-dl is a good way to workaround login when a particula
 You will first need to tell youtube-dl to stream media to stdout with `-o -`, and also tell your media player to read from stdin (it must be capable of this for streaming) and then pipe former to latter. For example, streaming to [vlc](https://www.videolan.org/) can be achieved with:
 
     youtube-dl -o - "https://www.youtube.com/watch?v=BaW_jenozKcj" | vlc -
+    
+### How can I download a youtube playlist?
+
+Note:- Old version of youtube-dl is not able to download play-list. first you know what is your youtube-dl version. To check version of Youtube-dl use command
+
+youtube-dl --version
+version 2014.02.17 and older version not able to download play-list. If you use older version then update it by
+
+sudo youtube-dl -U
+after successful update use command
+
+youtube-dl -cit https://www.youtube.com/playlist?list=PLttJ4RON7sleuL8wDpxbKHbSJ7BH4vvCk
+
+Also you can create URL list in a simple text file and use following command.
+
+ youtube-dl -cit -a file_name_in_which_you_paste_URL_list
+For MP3 format Audio can saved. But audio saves as .m4a format on my machine. 
+
+youtube-dl -cit --extract-audio --audio-format mp3 https://www.youtube.com/playlist?list=PLttJ4RON7sleuL8wDpxbKHbSJ7BH4vvCk
+NOTE :- If you install youtube-dl from Ubuntu software center. You can't update it from terminal. 
+Go Software center and update from it. 
+I test this commands on Wine because my youtube-dl also old. And I am unable to Update it. 
+If you can update your youtube-dl you can download play-list by using above commands.
 
 ### How do I download only new videos from a playlist?
 
